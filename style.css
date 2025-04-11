@@ -1,0 +1,447 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    background: #f5f7fa;
+    color: #222;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+header {
+    text-align: center;
+    padding: 1rem;
+    background-color: #222;
+    color: white;
+}
+
+.toolbar {
+    display: flex;
+    gap: 10px;
+    padding: 1rem;
+    justify-content: center;
+    background-color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.toolbar button {
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.toolbar button:hover {
+    background-color: #ccc;
+}
+
+#editor {
+    min-height: 200px;
+    max-height: 600px;
+    margin: 0 auto;
+    max-width: auto;
+    padding: 1rem;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    overflow-y: scroll;
+}
+
+.title-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    max-width: 600px;
+    margin: 20px auto; 
+    padding: 10px 15px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .title-area input[type="text"] {
+    flex: 1;
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    position: relative;
+  }
+ 
+  .title-area label {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-right: 5px;
+  }
+
+  .title-area input[type="color"] {
+    width: 35px;
+    height: 35px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  #titleInput
+  {
+    transform: translateY(-12px);
+  }
+
+#saveBtn {
+    display: block;
+    margin: 1rem auto;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    background: linear-gradient(45deg, #4caf50, #81c784);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  #saveBtn:hover {
+    background: linear-gradient(45deg, #43a047, #66bb6a);
+    transform: scale(1.02);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  #saveBtn:active {
+    transform: scale(0.98);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+
+#notesContainer {
+    padding: 20px;
+    column-count: 2;
+    column-gap: 20px;
+}
+
+.note {
+    position: relative;
+    break-inside: avoid;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 20px;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    box-sizing: border-box;
+}
+
+.note-header {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+
+.note-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.note-content {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.deleteBtn {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+.deleteBtn:hover {
+    background-color: #e60000;
+}
+
+.editBtn {
+    background-color: #4d90fe;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+    margin-right: 5px;  
+}
+
+.editBtn:hover {
+    background-color: #357ae8; 
+}
+
+#bold.active {
+    background-color: #4d90fe;
+    color: white;
+  }
+
+  #italic.active {
+    background-color: #4d90fe;
+    color: white;
+  }
+
+  #underline.active {
+    background-color: #4d90fe;
+    color: white;
+  }
+  
+  .pinBtn {
+    background: #ffa726;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+
+  .pinBtn:hover {
+    background: #fb8c00;
+  }
+  #counter {
+    margin: 10px auto;
+    text-align: center;
+    font-size: 1rem;
+    color: #555;
+  }
+
+  .roundPicker {
+    -webkit-appearance: none;
+    appearance: none;  
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background-color: #ffffff;
+}
+
+.roundPicker::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+.roundPicker::-webkit-color-swatch {
+    border: none;
+    border-radius: 50%;
+}
+
+.roundPicker:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#textColorLabel
+{
+    position: relative;
+    top: 10px;
+    font-weight: bold; 
+}
+
+#titleColorLabel
+{
+    position: relative;
+    bottom: 12px;
+    font-weight: bold; 
+}
+
+
+#backgroundcolorPicker {
+    -webkit-appearance: none;
+    appearance: none;  
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background-color: #ffffff;
+    position: absolute;
+    top: 177px;
+    right: 30px;
+  }
+  
+  #backgroundcolorPicker::-webkit-color-swatch-wrapper {
+    padding: 0;
+  }
+  #backgroundcolorPicker::-webkit-color-swatch {
+    border: none;
+    border-radius: 50%;
+  }
+
+  #backgroundcolorPicker:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  #backgroundcolorLabel
+  {
+    position: absolute;
+    top: 187px;
+    right: 70px;
+    font-weight: bold;
+  }
+
+.toggle-switch {
+    position: absolute;
+    right: 50px;
+    top: 50px;
+    width: 50px;
+    height: 25px;
+    margin: 0 auto;
+  }
+  
+  .toggle-switch input {
+    display: none;
+  }
+
+  .toggle-switch label {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #ccc;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    position: relative;
+  }
+
+  .toggle-switch label:after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 21px;
+    height: 21px;
+    background: #fff;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+  }
+  
+  .toggle-switch input:checked + label {
+    background: #666;
+  }
+  
+  .toggle-switch input:checked + label:after {
+    transform: translateX(25px);
+  }
+  
+  #darkModeLabel
+  {
+    font-family:'Comic Sans MS', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    position: absolute;
+    right: 52px;
+    top: 25px;
+  }
+body.dark-mode {
+    background-color: #363636;
+    color: #eee;
+  }
+  body.dark-mode header,
+  body.dark-mode footer {
+    background-color: #2d2d2d;
+    color: #eee;
+  }
+  body.dark-mode .toolbar {
+    background-color: #444;
+  }
+  
+  body.dark-mode .toolbar button {
+    background-color: #555;
+    color: #eee;
+  }
+  
+  body.dark-mode .toolbar button:hover {
+    background-color: #666;
+  }
+
+  body.dark-mode #editor {
+    background-color: #444;
+    color: #eee;           
+    border-color: #555;
+  }
+  
+  body.dark-mode .note {
+    background-color: #4a4a4a;
+    color: #ddd;
+  }
+
+  body.dark-mode .note .note-content {
+    color: #ddd;
+  }
+  
+  body.dark-mode p,
+  body.dark-mode h1,
+  body.dark-mode h2,
+  body.dark-mode h3,
+  body.dark-mode h4,
+  body.dark-mode h5,
+  body.dark-mode h6,
+  body.dark-mode span,
+  body.dark-mode li {
+    color: #eee;
+  }
+
+  #fullscreenToggle {
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: #363636;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    position: absolute;
+    left: 30px;
+    top: 30px;
+  }
+  
+  #fullscreenToggle:hover {
+    background-color: #353330;
+    transform: scale(1.05);
+  }
+  
+footer {
+    background-color: #363636;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}

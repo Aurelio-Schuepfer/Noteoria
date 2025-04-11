@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noteoria</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <h1>Noteoria</h1>
+        <button id="fullscreenToggle">
+            <i id="fullscreenIcon" class="fas fa-expand"></i>
+        </button>          
+        <label id="darkModeLabel" for="darkModeToggle">Theme</label>
+        <div id="darkModeToggle" class="toggle-switch">
+            <input type="checkbox" id="toggle-checkbox">
+            <label for="toggle-checkbox"></label>
+          </div>
+    </header>
+
+    <nav>
+        <div class="toolbar">
+            <button id="bold"><strong>B</strong></button>
+            <button id="italic"><em>I</em></button>
+            <button id="underline"><u>U</u></button>
+            <label id="textColorLabel" for="textColorPicker">Text Color: </label>
+            <input type="color" class="roundPicker" id="textColorPicker" value="#000000">
+            <label id="backgroundcolorLabel" for="backgroundcolorPicker">Editor Color:</label>
+            <input type="color" class="roundPicker" id="backgroundcolorPicker" value="ffffff">
+        </div>
+    </nav>
+
+    <main>
+        <div id="titleArea">
+            <input type="text" id="titleInput" placeholder="Note Title">
+            <label id="titleColorLabel" for="titleColorPicker">Title Color:</label>
+            <input type="color" class="roundPicker" id="titleColorPicker" value="#000000">
+        </div>
+        <div id="editor" contenteditable="true"></div>
+        <div id="counter">
+            Words: <span id="wordCount">0</span> | Chars: <span id="charCount">0</span>
+         </div>          
+        <button id="saveBtn">Save</button>
+        <div id="notesContainer"></div>
+    </main>
+
+    <footer>
+        <p>&copy; Noteoria 2025</p>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
